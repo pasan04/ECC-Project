@@ -10,7 +10,7 @@ def add_lung_cancer_data(patient_id,age,gender,air_pollution,alcohol_use,
         with backend_util.get_db_cursor() as cur:
             # Data insertion SQL statement
             data_insertion_query = """
-            INSERT INTO breast_cancer_data (
+            INSERT INTO lung_cancer_data (
                     patient_id,age,gender,air_pollution,alcohol_use,
                     dust_allergy,occupational_hazards,genetic_risk,chronic_lung_disease,balanced_diet,
                     obesity,smoking,passive_smoker,chest_pain,coughing_of_blood,
