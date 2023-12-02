@@ -17,7 +17,7 @@ def add_lung_cancer_data(patient_id,age,gender,air_pollution,alcohol_use,
                     fatigue,weight_loss,shortness_of_breath,wheezing,swallowing_difficulty,
                     clubbing_of_finger_nails,frequent_cold,dry_cough,snoring,level
             ) VALUES (
-                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
             ) RETURNING patient_id;
             """
             cur.execute(data_insertion_query, (patient_id, age, gender, air_pollution, alcohol_use,

@@ -37,7 +37,7 @@ create table breast_cancer_data(
 
 -- create the lung cancer data table
 create table lung_cancer_data(
-        patient_id int NOT NULL,
+        patient_id VARCHAR(40),
         age int NOT NULL,
         gender int,
         air_pollution int,
