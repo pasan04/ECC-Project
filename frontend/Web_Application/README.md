@@ -3,7 +3,7 @@ This repository contains contents for launching a streamlit webapp via docker co
 To launch on your local machine:
 
 Clone the GitHub repository to your local machine using the following command: 
-git clone git clone https://github.com/pasan04/ECC-Project.git
+git clone https://github.com/pasan04/ECC-Project.git
 
 
 Change Directory to project directory: 
