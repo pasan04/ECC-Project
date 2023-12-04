@@ -171,7 +171,7 @@ export default {
         submitData(){
                 this.loading = true;
                 this.statusesArray = [];
-                let dataUrl = constants.url + '/api/submitcancerresult';
+                let dataUrl = constants.url + '/api/getdata';
                 let requestData = {
                     partientId: this.partientId,
                     age: this.age,
