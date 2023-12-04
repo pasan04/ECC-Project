@@ -17,173 +17,108 @@
                                     <label> Patient Id</label>
                                     <input
                                         v-model="partientId"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
+                                        v-bind:class="{'form-control': true}"
                                         placeholder="Patient Id"
-                                        @input="keywordInputChanged"
                                     />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
                                 </div>
                                 <div class="col-xl-3">
                                     <label> Age</label>
                                     <input
                                         v-model="age"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
+                                        v-bind:class="{'form-control': true}"
                                         placeholder="Age"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
                                     />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
                                 </div>
                                 <div class="col-xl-3">
                                     <label> Gender</label>
                                     <input
                                         v-model="gender"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
+                                        v-bind:class="{'form-control': true}"
                                         placeholder="Gender"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
                                     />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
                                 </div>
                             </div>
                             <div class="row" >
                                 <div class="col-xl-3">
                                     <label> Air Pollution</label>
                                     <input
-                                        v-model="partientId"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
+                                        v-model="airpollution"
+                                        v-bind:class="{'form-control': true}"
                                         placeholder="Patient Id"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
                                     />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
                                 </div>
                                 <div class="col-xl-3">
                                     <label> Alcohol use</label>
                                     <input
-                                        v-model="sds"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
+                                        v-model="alcoholuse"
+                                        v-bind:class="{'form-control': true}"
                                         placeholder="Account Id"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
                                     />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
                                 </div>
                                 <div class="col-xl-3">
                                     <label> Dust Allergy</label>
                                     <input
-                                        v-model="sds"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
+                                        v-model="dustallergy"
+                                        v-bind:class="{'form-control': true}"
                                         placeholder="Account Id"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
                                     />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
                                 </div>
                             </div>
                             <div class="row" >
                                 <div class="col-xl-3">
                                     <label> OccuPational Hazards</label>
                                     <input
-                                        v-model="partientId"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
+                                        v-model="occupationalhazards"
+                                        v-bind:class="{'form-control': true}"
                                         placeholder="Patient Id"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
                                     />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
                                 </div>
                                 <div class="col-xl-3">
                                     <label> Genetic Risk</label>
                                     <input
-                                        v-model="sds"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
+                                        v-model="geneticrisk"
+                                        v-bind:class="{'form-control': true}"
                                         placeholder="Account Id"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
                                     />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
                                 </div>
                                 <div class="col-xl-3">
                                     <label> chronic Lung Disease</label>
                                     <input
-                                        v-model="sds"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
+                                        v-model="chroniclungdisease"
+                                        v-bind:class="{'form-control': true}"
                                         placeholder="Account Id"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
                                     />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
                                 </div>
                             </div>
                             <div class="row" >
                                 <div class="col-xl-3">
                                     <label> Balanced Diet</label>
                                     <input
-                                        v-model="partientId"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
-                                        placeholder="Patient Id"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
+                                        v-model="balanceddiet"
+                                        v-bind:class="{'form-control': true}"
+                                        placeholder="Balanced Diet"
                                     />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
                                 </div>
                                 <div class="col-xl-3">
                                     <label> Obesity</label>
                                     <input
-                                        v-model="sds"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
-                                        placeholder="Account Id"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
+                                        v-model="obesity"
+                                        v-bind:class="{'form-control': true}"
+                                        placeholder="Obesity"
                                     />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
                                 </div>
                                 <div class="col-xl-3">
                                     <label> Smoking</label>
                                     <input
-                                        v-model="sds"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
-                                        placeholder="Account Id"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
+                                        v-model="smoking"
+                                        v-bind:class="{'form-control': true}"
+                                        placeholder="Smoking"
                                     />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
                                 </div>
                             </div>
-                            <div class="row" >
-                                <div class="col-xl-3">
-                                    <label> Passive Smoker</label>
-                                    <input
-                                        v-model="partientId"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
-                                        placeholder="Patient Id"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
-                                    />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
-                                </div>
-                                <div class="col-xl-3">
-                                    <label> Coughing of Blood</label>
-                                    <input
-                                        v-model="sds"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
-                                        placeholder="Account Id"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
-                                    />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
-                                </div>
-                                <div class="col-xl-3">
-                                    <label> Data</label>
-                                    <input
-                                        v-model="sds"
-                                        v-bind:class="{'form-control': true, 'is-invalid': searchAccountIdError !== ''}"
-                                        placeholder="Account Id"
-                                        v-on:blur="searchAccountIdBlurred = true"
-                                        @input="keywordInputChanged"
-                                    />
-                                    <div v-if="searchAccountIdError !== ''" class="invalid-feedback">{{ searchAccountIdError }}</div>
+                            <div class="row" style="margin-top: 23px;">
+                                <div class="col-md-12 text-right">
+                                    <button type="button" class="btn btn-primary" @click="submitData" style="margin-right: 20px">Get Result</button>
                                 </div>
                             </div>
                         </div>
@@ -198,9 +133,6 @@
                     </div>
                 </div>
             </div>
-            <div class="alert alert-warning" v-if="statusesArray.length === 0 && this.searched">
-                <fa icon="exclamation-triangle" /> No data available.
-            </div>
         </div>
     </main>
 </template>
@@ -211,160 +143,61 @@ import * as constants from "@/shared/Constants";
 import { HollowDotsSpinner } from 'epic-spinners'
 import {toast} from "vue3-toastify";
 import Modal from "@/components/Modal.vue";
-import VueMultiselect from "vue-multiselect";
 
 export default {
     name: 'timelinestatus',
     components: {
         HollowDotsSpinner,
-        Modal,
-        VueMultiselect
+        Modal
     },
     data() {
         return {
-            instanceId: "",
-            clientKey: null,
-            clientSecret: null,
-            instanceData:[],
-            limitNo: "",
-            dataType: "",
-            statusesArray: [],
+            partientId: "",
+            age: "",
+            gender: "",
+            airpollution:"",
+            alcoholuse: "",
+            dustallergy: "",
+            occupationalhazards: "",
+            geneticrisk: "",
+            chroniclungdisease: "",
+            balanceddiet: "",
+            obesity: "",
+            smoking: "",
             loading: false,
-            instanceIdError: "",
-            instanceIdBlurred: false,
-            limitNoBlurred: false,
-            limitNoError: "",
-            dataTypeError: "",
-            dataTypeBlurred: false,
-            modalIsOpen: false,
-            osomeURL: "",
-            officialURL: "",
-            header_text: "",
-            searched: false,
-            selectedMastodonInstances: [],
         }
     },
     methods: {
-        instanceInputChanged(e){
-            let valueReceived = e.target.value;
-            if(valueReceived){
-                this.instanceIdError = ""
-                this.instanceIdBlurred = false;
-            }
-            this.instanceId = e.target.value;
-        },
-        isValidInput(inputValue) {
-            return inputValue.trim() !== '';
-        },
-        limitNoInputChanged(e){
-            let valueReceived = e.target.value;
-            if(valueReceived){
-                this.limitNoError = "";
-                this.limitNoBlurred = false;
-            }
-            this.limitNo = e.target.value;
-        },
-        dataTypeInputChanged(e){
-            let valueReceived = e.target.value;
-            if(valueReceived){
-                this.dataTypeError = "";
-                this.dataTypeBlurred = false;
-            }
-            this.dataType = e.target.value;
-        },
-        fetchAllInstanceData(){
-            let dataUrl = constants.url + '/api/get-instance-data-saved'
-            axios.get(dataUrl)
-                .then(res => {
-                    this.instanceData = res.data;
-                }).catch(error => {
-                console.log(error);
-            });
-        },
-        submitStatusesSearch(){
-            if (!this.isValidInput(this.limitNo)) {
-                this.limitNoError = "Please enter limit No";
-            }
-            if (!this.isValidInput(this.dataType)) {
-                this.dataTypeError = "Please enter data type";
-            }
+        submitData(){
 
-            if(this.isValidInput(this.limitNo) && this.isValidInput(this.dataType)) {
                 this.header_text = "Search Statuses URL"
                 this.loading = true;
                 this.statusesArray = [];
-                let dataUrl = constants.url + '/api/timeline-statuses';
+                let dataUrl = constants.url + '/api/submitcancerresult';
                 let requestData = {
-                    mastodon_instances: this.selectedMastodonInstances,
-                    data_type: this.dataType,
-                    limit_no: this.limitNo
+                    partientId: this.partientId,
+                    age: this.age,
+                    gender: this.gender,
+                    airpollution: this.airpollution,
+                    alcoholuse: this.alcoholuse,
+                    dustallergy: this.dustallergy,
+                    occupationalhazards: this.occupationalhazards,
+                    geneticrisk: this.geneticrisk,
+                    chroniclungdisease: this.chroniclungdisease,
+                    balanceddiet: this.balanceddiet,
+                    obesity: this.obesity,
+                    smoking: this.smoking,
                 };
-
-                let jsonData = JSON.stringify(requestData);
-
-                this.osomeURL = `curl -X POST -H "Content-Type: application/json" -d '${jsonData}' "https://osome.iu.edu/tools/mastodon/api/timeline-statuses"`;
-                this.officialURL = "https://"+this.selectedMastodonInstances[0].name+ "/api/v1/timelines/public?local="+this.dataType+"&limit="+this.limitNo;
 
                 axios.post(dataUrl, requestData)
                     .then(res => {
                         let data_received = res.data;
-                        //Assuming res.data is an array containing hashtag data
-                        for (let data of data_received) {
-                            for (let j = 0; j < data.timeline_status.length; j++) {
-                                this.statusesArray.push(data.timeline_status[j]);
-                            }
-                        }
-                        this.loading = false;
-                        let message = this.statusesArray.length + " data retrieved";
-                        this.successShowToast(message);
                     })
                     .catch(error => {
                         this.errorShowToast();
                         this.loading = false;
                         console.log(error);
                     });
-            }
-        },
-        stringifyJSON(stringobject) {
-            return JSON.stringify(stringobject, function (key, value) {
-                return value;
-            }, 4);
-        },
-        downloadJSON(){
-            // Create a Blob containing the JSON data
-            const blob = new Blob([JSON.stringify(this.statusesArray)], { type: 'application/json' });
-
-            // Create a download link
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = 'hastag_data-'+new Date() +'.json';
-
-            // Append the link to the document and trigger the click event
-            document.body.appendChild(a);
-            a.click();
-
-            // Remove the link from the document
-            document.body.removeChild(a);
-        },
-        clearAllFields(){
-            this.note = null,
-                this.username = null,
-                this.statusCount = null,
-                this.followersCount= null,
-                this.followingCount = null,
-                this.bot = null,
-                this.avatarLink = null,
-                this.displayName = null
-        },
-        viewAccountInfo(accountId){
-            this.$router.push({
-                name: 'AccountsById',
-                params: { accountId: accountId, instanceId: this.instanceId},
-            });
-        },
-        extractURLtoGetInstanceName(acct) {
-            const parts = acct.split('/');
-            return parts[2];
         },
         errorShowToast(){
             toast.error('Error in retrieving data!', {
@@ -382,26 +215,6 @@ export default {
         showModal() {
             this.modalIsOpen = true;
         },
-        addMastodonInstance (newInstance) {
-            const mastodonInstance = {
-                name: newInstance
-            }
-            this.instanceData.push(mastodonInstance)
-            this.selectedMastodonInstances.push(mastodonInstance)
-        },
-    },
-    mounted() {
-        this.fetchAllInstanceData();
-    },
-    created() {
-        this.accountId = this.$route.params.accountId;
-        this.instanceId = this.$route.params.instanceId;
-        if(!this.instanceId){
-            this.instanceId = ""
-        }
-        else{
-            this.submitAccountSearch();
-        }
     },
 }
 </script>
