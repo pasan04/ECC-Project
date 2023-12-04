@@ -169,8 +169,6 @@ export default {
     },
     methods: {
         submitData(){
-
-                this.header_text = "Search Statuses URL"
                 this.loading = true;
                 this.statusesArray = [];
                 let dataUrl = constants.url + '/api/submitcancerresult';
