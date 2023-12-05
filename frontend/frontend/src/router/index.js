@@ -9,7 +9,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory('/tools/mastodon'),
+  history: createWebHistory('/tools/prediction'),
   routes: routes,
 });
 
