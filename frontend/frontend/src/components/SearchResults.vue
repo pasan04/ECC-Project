@@ -42,7 +42,7 @@
                             </div>
                             <div class="row" >
                                 <div class="col-xl-3">
-                                    <label> Air Pollution</label>
+                                    <label> Air Pollution(1-10)</label>
                                     <input
                                         v-model="airpollution"
                                         v-bind:class="{'form-control': true}"
@@ -50,7 +50,7 @@
                                     />
                                 </div>
                                 <div class="col-xl-3">
-                                    <label> Alcohol use</label>
+                                    <label> Alcohol use(1-10)</label>
                                     <input
                                         v-model="alcoholuse"
                                         v-bind:class="{'form-control': true}"
@@ -58,7 +58,7 @@
                                     />
                                 </div>
                                 <div class="col-xl-3">
-                                    <label> Dust Allergy</label>
+                                    <label> Dust Allergy(1-10)</label>
                                     <input
                                         v-model="dustallergy"
                                         v-bind:class="{'form-control': true}"
@@ -68,7 +68,7 @@
                             </div>
                             <div class="row" >
                                 <div class="col-xl-3">
-                                    <label> OccuPational Hazards</label>
+                                    <label> OccuPational Hazards(1-10)</label>
                                     <input
                                         v-model="occupationalhazards"
                                         v-bind:class="{'form-control': true}"
@@ -76,7 +76,7 @@
                                     />
                                 </div>
                                 <div class="col-xl-3">
-                                    <label> Genetic Risk</label>
+                                    <label> Genetic Risk(1-10)</label>
                                     <input
                                         v-model="geneticrisk"
                                         v-bind:class="{'form-control': true}"
@@ -84,7 +84,7 @@
                                     />
                                 </div>
                                 <div class="col-xl-3">
-                                    <label> chronic Lung Disease</label>
+                                    <label> chronic Lung Disease(1-10)</label>
                                     <input
                                         v-model="chroniclungdisease"
                                         v-bind:class="{'form-control': true}"
@@ -94,7 +94,7 @@
                             </div>
                             <div class="row" >
                                 <div class="col-xl-3">
-                                    <label> Balanced Diet</label>
+                                    <label> Balanced Diet(1-10)</label>
                                     <input
                                         v-model="balanceddiet"
                                         v-bind:class="{'form-control': true}"
@@ -102,7 +102,7 @@
                                     />
                                 </div>
                                 <div class="col-xl-3">
-                                    <label> Obesity</label>
+                                    <label> Obesity(1-10)</label>
                                     <input
                                         v-model="obesity"
                                         v-bind:class="{'form-control': true}"
@@ -110,7 +110,7 @@
                                     />
                                 </div>
                                 <div class="col-xl-3">
-                                    <label> Smoking</label>
+                                    <label> Smoking(1-10)</label>
                                     <input
                                         v-model="smoking"
                                         v-bind:class="{'form-control': true}"
@@ -205,6 +205,7 @@ export default {
                 axios.post(dataUrl, requestData)
                     .then(res => {
                         this.result_data = res.data.result;
+                        console.log(this.result_data)
                         this.loading = false;
                         let message = "Successfully retrieved the data!"
                         this.successShowToast(message);
