@@ -31,11 +31,13 @@
                                 </div>
                                 <div class="col-xl-3">
                                     <label> Gender</label>
-                                    <input
-                                        v-model="gender"
-                                        v-bind:class="{'form-control': true}"
-                                        placeholder="Gender"
-                                    />
+                                    <select v-model="gender"
+                                            label="Choose Data"
+                                            class="form-control">
+                                        <option disabled value="">Choose Data</option>
+                                        <option value="0">Male</option>
+                                        <option value="1">Female</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row" >
@@ -44,7 +46,7 @@
                                     <input
                                         v-model="airpollution"
                                         v-bind:class="{'form-control': true}"
-                                        placeholder="Patient Id"
+                                        placeholder="Air Pollution"
                                     />
                                 </div>
                                 <div class="col-xl-3">
@@ -52,7 +54,7 @@
                                     <input
                                         v-model="alcoholuse"
                                         v-bind:class="{'form-control': true}"
-                                        placeholder="Account Id"
+                                        placeholder="Alcohol use"
                                     />
                                 </div>
                                 <div class="col-xl-3">
@@ -60,7 +62,7 @@
                                     <input
                                         v-model="dustallergy"
                                         v-bind:class="{'form-control': true}"
-                                        placeholder="Account Id"
+                                        placeholder="Dust Allergy"
                                     />
                                 </div>
                             </div>
@@ -70,7 +72,7 @@
                                     <input
                                         v-model="occupationalhazards"
                                         v-bind:class="{'form-control': true}"
-                                        placeholder="Patient Id"
+                                        placeholder="OccuPational Hazards"
                                     />
                                 </div>
                                 <div class="col-xl-3">
@@ -78,7 +80,7 @@
                                     <input
                                         v-model="geneticrisk"
                                         v-bind:class="{'form-control': true}"
-                                        placeholder="Account Id"
+                                        placeholder="Genetic Risk"
                                     />
                                 </div>
                                 <div class="col-xl-3">
@@ -86,7 +88,7 @@
                                     <input
                                         v-model="chroniclungdisease"
                                         v-bind:class="{'form-control': true}"
-                                        placeholder="Account Id"
+                                        placeholder="chronic Lung Disease"
                                     />
                                 </div>
                             </div>
@@ -131,6 +133,17 @@
                             color="#ff1d5e"
                         />
                     </div>
+                    <div class="col-12" v-if="submit_data">
+                        <div class="alert alert-info" v-if="result_data>0.90">
+                            <p>There is high risk of having lung cancer for the patient. Risk is: {{result_data}}</p>
+                        </div>
+                        <div class="alert alert-info"  v-if="0.80>result_data>0.90">
+                            <p>There is a risk of having lung cancer for the patient. Risk is: {{result_data}}</p>
+                        </div>
+                        <div class="alert alert-info"  v-if="result_data<0.50">
+                            <p>There is a lesser risk of having lung cancer. Risk is: {{result_data}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -165,12 +178,14 @@ export default {
             obesity: "",
             smoking: "",
             loading: false,
+            result_data: "",
+            submit_data: false,
         }
     },
     methods: {
         submitData(){
                 this.loading = true;
-                this.statusesArray = [];
+                this.submit_data = false;
                 let dataUrl = constants.url + '/api/getdata';
                 let requestData = {
                     partientId: this.partientId,
@@ -189,7 +204,11 @@ export default {
 
                 axios.post(dataUrl, requestData)
                     .then(res => {
-                        let data_received = res.data;
+                        this.result_data = res.data.result;
+                        this.loading = false;
+                        let message = "Successfully retrieved the data!"
+                        this.successShowToast(message);
+                        this.submit_data = true;
                     })
                     .catch(error => {
                         this.errorShowToast();

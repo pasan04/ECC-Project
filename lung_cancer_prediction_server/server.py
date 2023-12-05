@@ -155,21 +155,21 @@ print(classification_report(y_test, y_pred))
 
 import pandas as pd
 
-def getResults():
+def getResults(age, gender, airpollution, alcoholuse, dustallergy, occupationalhazards, geneticrisk, chroniclungdisease, balanceddiet, obesity, smoking):
     # Creating a DataFrame with new input data
     new_data = pd.DataFrame({
         'index': [1],
-        'Age': [25],
-        'Gender': [0],  # Assuming 0 for Male, 1 for Female
-        'Air Pollution': [3],
-        'Alcohol use': [2],
-        'Dust Allergy': [1],
-        'OccuPational Hazards': [2],
-        'Genetic Risk': [2],
-        'chronic Lung Disease': [2],
-        'Balanced Diet': [2],
-        'Obesity': [2],
-        'Smoking': [2],
+        'Age': age,
+        'Gender': gender,  # Assuming 0 for Male, 1 for Female
+        'Air Pollution': airpollution,
+        'Alcohol use': alcoholuse,
+        'Dust Allergy': dustallergy,
+        'OccuPational Hazards': occupationalhazards,
+        'Genetic Risk': geneticrisk,
+        'chronic Lung Disease': chroniclungdisease,
+        'Balanced Diet': balanceddiet,
+        'Obesity': obesity,
+        'Smoking': smoking,
         'Passive Smoker': [2],
         'Chest Pain': [2],
         'Coughing of Blood': [2],
@@ -212,10 +212,24 @@ def getResults():
     else:
         return "Bad request", 400
 
-@app.route('/getdata', methods=['GET'])
+@app.route('/api/getdata', methods=['POST'])
 def get_data_endpoint():
+
     try:
-        resp = getResults()  # Assuming getResults returns a NumPy array
+        data = request.get_json()
+        age = data.get('age')
+        gender = data.get('gender')
+        airpollution = data.get('airpollution')
+        alcoholuse = data.get('alcoholuse')
+        dustallergy = data.get('dustallergy')
+        occupationalhazards = data.get('occupationalhazards')
+        geneticrisk = data.get('geneticrisk')
+        chroniclungdisease = data.get('chroniclungdisease')
+        balanceddiet = data.get('balanceddiet')
+        obesity = data.get('obesity')
+        smoking = data.get('smoking')
+        resp = getResults(age, gender, airpollution, alcoholuse, dustallergy, occupationalhazards, geneticrisk, chroniclungdisease,balanceddiet, obesity, smoking)
+        # Assuming getResults returns a NumPy array
         resp_value = resp.item()  # Extract the single value from the array
     except Exception as e:
         print(e)  # Print the exception for debugging purposes
